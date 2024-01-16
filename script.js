@@ -105,7 +105,7 @@ var includeUppercase = confirm("Include uppercase characters?");
 var includeNumbers = confirm("Include numeric characters?")
 var includeSpecial = confirm("Include special characters?");
 
-if (!includeLowercase && !includeUppercase && !includeNumbersumbers && !includeSpecial) {
+if (!includeLowercase && !includeUppercase && !includeNumbers && !includeSpecial) {
   alert('Please select at least one character type to generate your password');
   return null;  
   }
