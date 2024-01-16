@@ -1,5 +1,5 @@
 // Array of special characters to be included in password
-var specialCharacters = [
+const specialCharacters = [
   '@',
   '%',
   '+',
@@ -26,10 +26,10 @@ var specialCharacters = [
 ];
 
 // Array of numeric characters to be included in password
-var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+const numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
 // Array of lowercase characters to be included in password
-var lowerCasedCharacters = [
+const lowerCasedCharacters = [
   'a',
   'b',
   'c',
@@ -59,7 +59,7 @@ var lowerCasedCharacters = [
 ];
 
 // Array of uppercase characters to be included in password
-var upperCasedCharacters = [
+const upperCasedCharacters = [
   'A',
   'B',
   'C',
@@ -88,21 +88,26 @@ var upperCasedCharacters = [
   'Z'
 ];
 
-// Function to prompt user for password options
+// Function to prompt user for password length
 function getPasswordOptions() { 
-var passwordLength = prompt('Please enter the length of your password (between 8 and 128 characters');
+const passwordLength = parseInt(prompt('Please enter the length of your password (between 8 and 128 characters'));
+
+//input validation
 if (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
     alert ("Please enter a valid password length between 8 and 128 characters");
-    return;
+    return null;
 }
 
-var lowercase = confirm("Include lowercase characters?");
-var uppercase = confirm("Include uppercase characters?");
-var numbers = confirm("Include numeric characters?")
-var special = confirm("Include special characters?");
+//prompt to confirm character types
 
-if (!lowercase && !uppercase && !numbers && !special) {
-  alert('Please select at least one character type to generate your password')  
+var includeLowercase = confirm("Include lowercase characters?");
+var includeUppercase = confirm("Include uppercase characters?");
+var includeNumbers = confirm("Include numeric characters?")
+var includeSpecial = confirm("Include special characters?");
+
+if (!includeLowercase && !includeUppercase && !includeNumbersumbers && !includeSpecial) {
+  alert('Please select at least one character type to generate your password');
+  return null;  
   }
 }
 
