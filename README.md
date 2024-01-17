@@ -10,6 +10,11 @@ I was also incorrectly surrounding math.floor with [] in the getRandom function.
 
 Another prominent issue that I faced was that I incorrectly labelled 2 of the concat arrays (numericCharacters and specialCharacters) This returned as error in the console log however, it took me a little while to figure out that the error was a syntax one.
 
+Technology used: 
+HTML 
+CSS
+Vanilla Javascript
+
 Functionality:
 
 The input box works and will allow you to select lowercase, uppercase, numeric and special characters to generate the password randomly from the array using the following function function 
