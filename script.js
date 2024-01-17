@@ -121,7 +121,7 @@ if (!includeLowercase && !includeUppercase && !includeNumbers && !includeSpecial
 
 // Function for getting a random element from an array
 function getRandom(arr) { 
-  var getIndex = [Math.floor(Math.random() * arr.length)];
+  var getIndex = Math.floor(Math.random() * arr.length);
   return arr[getIndex];
 }
 
@@ -135,10 +135,10 @@ let charactersInput = [];
   charactersInput = charactersInput.concat(upperCasedCharacters);
   }
   if (options.includeNumbers) {
-  charactersInput = charactersInput.concat(includeNumbers);
+  charactersInput = charactersInput.concat(numericCharacters);
   }
   if (options.includeSpecial) {
-  charactersInput = charactersInput.concat(includeSpecial);
+  charactersInput = charactersInput.concat(specialCharacters);
   }
   if (charactersInput.length === 0) {
     alert('Please select at least one character type to generate your password');
