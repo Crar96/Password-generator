@@ -156,7 +156,7 @@ let charactersInput = [];
 
 // Write password to the #password input
 function writePassword() {
-  var password = getPasswordOptions();
+  var options = getPasswordOptions();
 
   if (options) {
   var password = generatePassword(options);
