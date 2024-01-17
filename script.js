@@ -88,7 +88,7 @@ const upperCasedCharacters = [
   'Z'
 ];
 
-// Function to prompt user for password length
+// Function to prompt user for password options
 function getPasswordOptions() { 
 var passwordLength = parseInt(prompt('Please enter the length of your password (between 8 and 128 characters'));
 
@@ -102,7 +102,7 @@ if (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
 
 var includeLowercase = confirm("Include lowercase characters?");
 var includeUppercase = confirm("Include uppercase characters?");
-var includeNumbers = confirm("Include numeric characters?")
+var includeNumbers = confirm("Include numeric characters?");
 var includeSpecial = confirm("Include special characters?");
 
 if (!includeLowercase && !includeUppercase && !includeNumbers && !includeSpecial) {
@@ -110,7 +110,13 @@ if (!includeLowercase && !includeUppercase && !includeNumbers && !includeSpecial
   return null;  
   }
 
-  return {length, includeLowercase, includeUppercase, includeNumbers, includeSpecial};
+  return {
+    length: passwordLength, 
+    includeLowercase: includeLowercase, 
+    includeUppercase: includeUppercase,
+    includeNumbers: includeNumbers,
+    includeSpecial: includeSpecial
+  };
 }
 
 // Function for getting a random element from an array
@@ -139,15 +145,24 @@ let charactersInput = [];
     return null;
   }
 
-  
+  let password = '';
+  for (let i =0; i < options.length; i++) {
+    password +- getRandom(charactersInput);
+  }
 
+  return password;
+}
 
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
+  var password = getPasswordOptions();
+
+  if (options) {
+  var password = generatePassword(options);
   var passwordText = document.querySelector('#password');
   passwordText.value = password;
+  }
 }
 
 // Get references to the #generate element
