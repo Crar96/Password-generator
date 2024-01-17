@@ -88,6 +88,41 @@ const upperCasedCharacters = [
   'Z'
 ];
 
+// Function for getting a random element from an array
+function getRandom(arr) { 
+  var getIndex = Math.floor(Math.random() * arr.length);
+  return arr[getIndex];
+}
+
+// Function to generate password with user input
+function generatePassword(options) {
+  let charactersInput = [];
+    if (options.includeLowercase) {
+    charactersInput = charactersInput.concat(lowerCasedCharacters);
+    }
+    if (options.includeUppercase) {
+    charactersInput = charactersInput.concat(upperCasedCharacters);
+    }
+    if (options.includeNumbers) {
+    charactersInput = charactersInput.concat(numericCharacters);
+    }
+    if (options.includeSpecial) {
+    charactersInput = charactersInput.concat(specialCharacters);
+    }
+    if (charactersInput.length === 0) {
+      alert('Please select at least one character type to generate your password');
+      return null;
+    }
+  
+    let password = '';
+    for (let i =0; i < options.length; i++) {
+      password += getRandom(charactersInput);
+    }
+  
+    return password;
+  }
+  
+
 // Function to prompt user for password options
 function getPasswordOptions() { 
 var passwordLength = parseInt(prompt('Please enter the length of your password (between 8 and 128 characters'));
@@ -117,40 +152,6 @@ if (!includeLowercase && !includeUppercase && !includeNumbers && !includeSpecial
     includeNumbers: includeNumbers,
     includeSpecial: includeSpecial
   };
-}
-
-// Function for getting a random element from an array
-function getRandom(arr) { 
-  var getIndex = Math.floor(Math.random() * arr.length);
-  return arr[getIndex];
-}
-
-// Function to generate password with user input
-function generatePassword(options) {
-let charactersInput = [];
-  if (options.includeLowercase) {
-  charactersInput = charactersInput.concat(lowerCasedCharacters);
-  }
-  if (options.includeUppercase) {
-  charactersInput = charactersInput.concat(upperCasedCharacters);
-  }
-  if (options.includeNumbers) {
-  charactersInput = charactersInput.concat(numericCharacters);
-  }
-  if (options.includeSpecial) {
-  charactersInput = charactersInput.concat(specialCharacters);
-  }
-  if (charactersInput.length === 0) {
-    alert('Please select at least one character type to generate your password');
-    return null;
-  }
-
-  let password = '';
-  for (let i =0; i < options.length; i++) {
-    password +- getRandom(charactersInput);
-  }
-
-  return password;
 }
 
 
