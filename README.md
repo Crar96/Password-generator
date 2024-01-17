@@ -25,3 +25,5 @@ Known bugs:
 
 Not entering any data into the input field and then pressing ok on the alert will not reload the page and bring up the alert again. I know there is a way to fix this by automatically reloading the page when no input is given but I could not figure this out.
 
+![assignment task 5 screenshot](https://github.com/Crar96/Password-generator/assets/136388946/15a55f86-791b-413d-bc2a-99e1ac9b26f2)
+
