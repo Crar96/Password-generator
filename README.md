@@ -15,6 +15,12 @@ HTML
 CSS
 Vanilla Javascript
 
+Links:
+
+Deployed link: https://crar96.github.io/Password-generator/
+
+Repo link: https://github.com/Crar96/Password-generator
+
 Functionality:
 
 The input box works and will allow you to select lowercase, uppercase, numeric and special characters to generate the password randomly from the array using the following function function 
@@ -28,7 +34,9 @@ If a password length is stated but no character types are not selected then an a
 
 Known bugs:
 
-Not entering any data into the input field and then pressing ok on the alert will not reload the page and bring up the alert again. I know there is a way to fix this by automatically reloading the page when no input is given but I could not figure this out.
+1: Not entering any data into the input field and then pressing ok on the alert will not reload the page and bring up the alert again. I know there is a way to fix this by automatically reloading the page when no input is given but I could not figure this out.
+
+2: On the GitHub pages link the rest of the display window seems to disappear the prompt appears. This is not an issue when accessing the testing the application locally on a live server
 
 ![assignment task 5 screenshot](https://github.com/Crar96/Password-generator/assets/136388946/15a55f86-791b-413d-bc2a-99e1ac9b26f2)
 
